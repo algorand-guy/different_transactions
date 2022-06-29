@@ -169,7 +169,6 @@ if __name__ == "__main__":
     # Define account
     account_mnemonics = "program shy second strike ghost panel account fence welcome visa cattle sad cake proud reward lab abuse rail scare note alarm just cereal above cook"
 
-
     # Create application
     app_id = create_app(algod_client, account_mnemonics)
 
