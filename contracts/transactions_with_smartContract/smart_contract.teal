@@ -1,0 +1,26 @@
+#pragma version 6
+txn ApplicationID
+int 0
+==
+bnz main_l6
+txn OnCompletion
+int NoOp
+==
+bnz main_l3
+err
+main_l3:
+global GroupSize
+int 4
+==
+txna ApplicationArgs 0
+byte "Start the transaction"
+==
+&&
+bnz main_l5
+err
+main_l5:
+int 1
+return
+main_l6:
+int 1
+return

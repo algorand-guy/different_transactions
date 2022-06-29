@@ -116,7 +116,7 @@ def create_app(client, passphrase):
         CommonFunctions.wait_for_confirmation (client, tx_id)
         transaction_response = client.pending_transaction_info (tx_id)
         application_id = transaction_response['application-index']
-        print ("Created new user id: ", application_id)
+        print ("Created new app id: ", application_id)
 
         return application_id
 
@@ -138,7 +138,7 @@ def call_smart_contract(client, passphrase, index, args_list):
     # create unsigned transaction
     app_args = ["Start the transaction", int (args_list[0]), int (args_list[1])]
 
-    # declare account reference
+    # declare references
     seller = "OLZBY2R7PFJN3DQ2JBLMT65O7IBZ4ARIFFUCRMZTVOCZ65JT53LD3UCIII"
     commission = "MO4CBXFLCK76E6VQJ3OLGS33ARGML2V2RGORIYNUSTJK4GVDKKL7LJDI3M"
     accounts_lst = [seller, commission]

@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/inner_txn.iml" filepath="$PROJECT_DIR$/inner_txn.iml" />
+      <module fileurl="file://$PROJECT_DIR$/different_transactions.iml" filepath="$PROJECT_DIR$/different_transactions.iml" />
     </modules>
   </component>
 </project>
