@@ -12,7 +12,6 @@ global_schema = transaction.StateSchema (global_ints, global_bytes)
 local_schema = transaction.StateSchema (local_ints, local_bytes)
 
 
-
 # Declare the approval program
 approval_program_source_initial =b"""#pragma version 6
 txn ApplicationID
