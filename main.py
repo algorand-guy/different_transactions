@@ -1,8 +1,8 @@
 import algosdk.encoding as e
 from algosdk import account, mnemonic
 from algosdk.future import transaction
-
 from utilities import CommonFunctions
+
 
 # Declare application state storage (immutable)
 local_ints = 5
