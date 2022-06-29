@@ -1,0 +1,62 @@
+#pragma version 6
+txn ApplicationID
+int 0
+==
+bnz main_l6
+txn OnCompletion
+int NoOp
+==
+bnz main_l3
+err
+main_l3:
+global GroupSize
+int 1
+==
+txn Sender
+global CreatorAddress
+==
+&&
+txna ApplicationArgs 0
+byte "Start the transaction"
+==
+&&
+bnz main_l5
+err
+main_l5:
+itxn_begin
+int pay
+itxn_field TypeEnum
+txna Accounts 1
+itxn_field Receiver
+txna ApplicationArgs 1
+btoi
+itxn_field Amount
+int 1000
+itxn_field Fee
+itxn_next
+int pay
+itxn_field TypeEnum
+txna Accounts 2
+itxn_field Receiver
+txna ApplicationArgs 2
+btoi
+itxn_field Amount
+int 1000
+itxn_field Fee
+itxn_next
+int axfer
+itxn_field TypeEnum
+txna Accounts 0
+itxn_field AssetReceiver
+int 0
+itxn_field AssetAmount
+txna Assets 0
+itxn_field XferAsset
+int 1000
+itxn_field Fee
+itxn_submit
+int 1
+return
+main_l6:
+int 1
+return
